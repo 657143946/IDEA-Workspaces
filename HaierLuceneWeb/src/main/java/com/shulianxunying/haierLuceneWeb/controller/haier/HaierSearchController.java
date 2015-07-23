@@ -29,7 +29,8 @@ public class HaierSearchController {
     @RequestMapping("/searchCombineList")
     public Map<String, Object> haierSearchCombineList(
             /**搜索文本**/
-            @RequestParam(defaultValue = "计算机,金融,财经,工程师") String description,
+            @RequestParam(defaultValue = "计算机,金融,财经," +
+                    "工程师,销售 质量 市场 地产 研发企划 服务 客服 生产制造") String description,
             /**筛选条件**/
             @RequestParam(defaultValue = "all") String sex,
             @RequestParam(defaultValue = "all") String location,
