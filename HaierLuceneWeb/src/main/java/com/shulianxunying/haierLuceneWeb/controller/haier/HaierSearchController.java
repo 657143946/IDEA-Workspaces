@@ -15,10 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by ChrisLee.
@@ -97,10 +94,13 @@ public class HaierSearchController {
 
             }
         }
+        Collections.sort(resumes, new Comparator<Result>() {
+            public int compare(Result o1, Result o2) {
+                return o2.getMatch() - o1.getMatch() > 0? 1: -1;
+            }
+        });
         int total = topDocs.totalHits;
-
         double totalPage = Math.ceil(total/(float)pageSize);
-
         ret.put("count", total);
         ret.put("users", resumes);
         ret.put("page", page);
