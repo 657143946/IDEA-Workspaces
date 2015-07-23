@@ -9,7 +9,6 @@
     <artifactId>HaierLuceneWeb</artifactId>
     <packaging>war</packaging>
     <name>HaierLuceneWeb Maven Webapp</name>
-    <url>http://maven.apache.org</url>
 
     <!-- 依赖 -->
     <dependencies>
@@ -19,6 +18,12 @@
             <artifactId>junit</artifactId>
             <version>3.8.1</version>
             <scope>test</scope>
+        </dependency>
+        <!--spring mvc-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>4.0.7.RELEASE</version>
         </dependency>
         <!--lucene 核心-->
         <dependency>
@@ -31,6 +36,12 @@
             <groupId>org.apache.lucene</groupId>
             <artifactId>lucene-queryparser</artifactId>
             <version>4.10.2</version>
+        </dependency>
+        <!-- 导入java ee jar 包 -->
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+            <version>7.0</version>
         </dependency>
     </dependencies>
 
