@@ -32,6 +32,10 @@ public class FindMongo {
         /**
          * 构建查询
          */
+        List<Result> ret = new LinkedList<>();
+        if(ids == null || ids.length == 0){
+            return ret;
+        }
         List<DBObject> queryIds = new LinkedList<>();
         for (String id : ids) {
             queryIds.add(new BasicDBObject("cv_id", id));
@@ -61,7 +65,7 @@ public class FindMongo {
         if (config.getProperty("user") != null && !"".equals(config.getProperty("user"))) {
             combine.authenticate(config.getProperty("user"), config.getProperty("password").toCharArray());
         }
-        List<Result> ret = new LinkedList<>();
+
         DBCursor cursor = combine.getCollection("resume_info").find(query, fields).limit(ids.length);
         while (cursor.hasNext()) {
             DBObject resume = cursor.next();
