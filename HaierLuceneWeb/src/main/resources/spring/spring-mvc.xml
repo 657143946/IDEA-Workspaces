@@ -43,18 +43,18 @@
 
 
     <!-- 定义资源访问 -->
-    <mvc:resources location="/css/" mapping="/css/**"/>
-    <mvc:resources location="/js/" mapping="/js/**"/>
-    <mvc:resources location="/image/" mapping="/image/**"/>
+    <!--<mvc:resources location="/css/" mapping="/css/**"/>-->
+    <!--<mvc:resources location="/js/" mapping="/js/**"/>-->
+    <!--<mvc:resources location="/image/" mapping="/image/**"/>-->
 
     <!-- 总错误处理 -->
-    <bean id="exceptionResolver" class="me.ChrisLee.yep.interceptor.GlobalExceptionHandler"/>
+    <bean id="exceptionResolver" class="com.shulianxunying.haierLuceneWeb.interceptor.GlobalExceptionHandler"/>
 
 
     <!-- 启用spring mvc 注解 -->
     <context:annotation-config/>
     <!-- 设置使用注解的类所在的jar包 -->
-    <context:component-scan base-package="me.ChrisLee"/>
+    <context:component-scan base-package="com.shulianxunying.haierLuceneWeb"/>
     <!-- 加载config下的所有配置文件 -->
     <context:property-placeholder location="classpath:properties/*.properties"/>
 
